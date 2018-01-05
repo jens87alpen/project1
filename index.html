@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> >
+
     <title>Beer Club</title>
     <!-- demo style -->
     <style>
@@ -21,13 +22,24 @@
 </head>
 
 <body>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <!-- Google Maps Api -->
-    <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCBfmDkQbll-k1v6vqIIuzXy3vmULm890&callback=initMap">
-</script>
-    </script>
+ <form method="post">
+      <fieldset>
+        <label for="br">Beer: </label>
+        <input type = "text" name="br" id="br">
+        <input type = "submit" name="submit_beer" id="beerSub">
+      </fieldset>
+    </form>
+    <ul>
+      <li><span>Beer Searched: </span><span id="sb"></span></li>
+      <li><img id=beerImg><img></li>
+      <li><span>Beer ID: </span><span id="id"></span></li>
+      <li><span>Brewery: </span><span id="brew"></span></li>
+      <li><span>Location: </span><span id="loc"></span></li>
+      <li><img id=brewImg><img></li>
+
+    </ul>
+    
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- JS Link -->
@@ -35,3 +47,4 @@
 </body>
 
 </html>
+
