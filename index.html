@@ -2,49 +2,109 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- My CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> >
-
-    <title>Beer Club</title>
-    <!-- demo style -->
-    <style>
+    <title>Sample Google Maps</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- JQuery CDN-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <style type="text/css">
     #map {
-        height: 400px;
-        width: 100%;
+        height: 180%;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
     }
     </style>
 </head>
 
 <body>
- <form method="post">
-      <fieldset>
-        <label for="br">Beer: </label>
-        <input type = "text" name="br" id="br">
-        <input type = "submit" name="submit_beer" id="beerSub">
-      </fieldset>
-    </form>
-    <ul>
-      <li><span>Beer Searched: </span><span id="sb"></span></li>
-      <li><img id=beerImg><img></li>
-      <li><span>Beer ID: </span><span id="id"></span></li>
-      <li><span>Brewery: </span><span id="brew"></span></li>
-      <li><span>Location: </span><span id="loc"></span></li>
-      <li><img id=brewImg><img></li>
+    <!-- Map canvass -->
+    <div id="map"></div>
+    <!-- Find beer form -->
+    <div class="form-group">
+        <label for="beer-input">Find a beer</label>
+        <input class="form-control" type="text" id="beer-input" name="beer-input">
+        <button type="submit" class="btn btn-primary" id="addBeer" value="Submit">Submit</button>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        console.log("ready!");
+    });
 
-    </ul>
+    var beer = $(this).attr("data-name");
+    var proxyURL = "https://desolate-tundra-96867.herokuapp.com/"
+    var queryURL = proxyURL + "http://api.brewerydb.com/v2/beers?styleId=30&withBreweries=Y&key=2e10788536db6bc8ca751b72291ba1dc";
+
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+
+        .done(function(response) {
+            console.log(response);
+            var results = response.data;
+
+            var resultsArr = [];
+            for (var i = 0; i < results.length; i++) {
+                var breweryName = results[i].breweries[0].name;
+                var beerName = results[i].name;
+                var latitude = results[i].breweries[0].locations[0].latitude;
+                var longitude = results[i].breweries[0].locations[0].longitude;
+
+                var singleArr = [];
+                singleArr.push(breweryName);
+                singleArr.push(beerName);
+                singleArr.push(latitude);
+                singleArr.push(longitude);
+
+                resultsArr.push(singleArr);
+            }
+
+            console.log(resultsArr)
+           var map = L.map('map').setView([39.50, -98.35], 5  );
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+    for (var i = 0; i < resultsArr.length; i++) {
+      marker = new L.marker([resultsArr[i][2],resultsArr[i][3]])
+        .bindPopup("<b>" + resultsArr[i][0] + "</b><br>" + resultsArr[i][1]  )
+
+
+        .addTo(map);
+    }
+    var searchLayer = L.layerGroup().addTo(map);
+//... adding data in searchLayer ...
+map.addControl( new L.Control.Search({layer: searchLayer}) );
+//searchLayer is a L.LayerGroup contains searched markers
+
+
+    // for (var i = 0; i < placesArray.length; i++) {
+    //   marker = new L.marker([placesArray[i][1],placesArray[i][2]])
+    //     .bindPopup(placesArray[i][0])
+    //     .addTo(map);
+    // }
+
+    // var marker = L.marker([latitude, longitude]).addTo(mymap);
+
+    // marker.bindPopup("<b>"+breweryName+"</b><br>"+beerName).openPopup();
     
 
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <!-- JS Link -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+        });
+    
+    </script>
 </body>
 
 </html>
-
