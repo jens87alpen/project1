@@ -32,7 +32,7 @@
             }
 
             console.log(resultsArr)
-            var map = L.map('map').setView([39.50, -98.35], 5);
+            var map = L.map('map').setView([37.6872, -97.3301], 5);
             mapLink =
                 '<a href="http://openstreetmap.org">OpenStreetMap</a>';
             L.tileLayer(
@@ -48,6 +48,25 @@
 
                     .addTo(map);
             }
+            // Locate user location // 
+            map.locate({ setView: true, maxZoom: 8 });
+
+            function onLocationFound(e) {
+                var radius = e.accuracy / 2;
+
+                L.marker(e.latlng).addTo(map)
+                    .bindPopup("Your Location").openPopup();
+
+                L.circle(e.latlng, radius).addTo(map);
+            }
+
+            map.on('locationfound', onLocationFound);
+
+            function onLocationError(e) {
+                alert(e.message);
+            }
+
+            map.on('locationerror', onLocationError);
 
 
         });
