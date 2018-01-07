@@ -44,29 +44,36 @@
             for (var i = 0; i < resultsArr.length; i++) {
                 marker = new L.marker([resultsArr[i][2], resultsArr[i][3]])
                     .bindPopup("<b>" + resultsArr[i][0] + "</b><br>" + resultsArr[i][1])
-
-
                     .addTo(map);
             }
             // Locate user location // 
             map.locate({ setView: true, maxZoom: 8 });
-
             function onLocationFound(e) {
                 var radius = e.accuracy / 2;
-
                 L.marker(e.latlng).addTo(map)
                     .bindPopup("Your Location").openPopup();
-
                 L.circle(e.latlng, radius).addTo(map);
             }
-
             map.on('locationfound', onLocationFound);
-
             function onLocationError(e) {
                 alert(e.message);
             }
-
             map.on('locationerror', onLocationError);
+
+ //////////////// OSMGeocoder JS -- adds searchbox and functionality ////////////////
+    var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        var osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});
+        // var map = new L.Map('map').addLayer(osm).setView([48.5, 2.5], 15);
+
+        var osmGeocoder = new L.Control.OSMGeocoder({placeholder: 'Search location...'});
+
+        map.addControl(osmGeocoder);
+            if (typeof console == "undefined") {
+    this.console = { log: function (msg) { /* do nothing since it would otherwise break IE */} };
+}
+
+
 
 
         });
