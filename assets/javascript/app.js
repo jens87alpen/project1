@@ -10,7 +10,7 @@ $(document).ready(function() {
         var beers = 'beers'
         var proxyURL = "https://desolate-tundra-96867.herokuapp.com/"
         var styleId = "styleId=30"
-        var queryURL = proxyURL + "http://api.brewerydb.com/v2/"+beers+"?"+styleId+"&"+breweryParam+"&hasLabels=Y&key=2e10788536db6bc8ca751b72291ba1dc&p=" + pageNumber;
+        var queryURL = proxyURL + "http://api.brewerydb.com/v2/"+beers+"?"+styleId+"&"+breweryParam+"&hasLabels=Y&key=67cc871147945b4cb548da62cde1b980&p=" + pageNumber;
 
         $.ajax({
             url: queryURL,
@@ -23,8 +23,9 @@ $(document).ready(function() {
             var results = response.data;
             console.log(response.data);
             var allPages = response.currentPage;
-            var numberOfPages = response.numberOfPages;
-            console.log(numberOfPages);
+            var numberOfPages = 10//response.numberOfPages;
+            console.log(pageNumber);
+
 
 
             
@@ -36,6 +37,16 @@ $(document).ready(function() {
                 var beerName = results[i].name;
                 var latitude = results[i].breweries[0].locations[0].latitude;
                 var longitude = results[i].breweries[0].locations[0].longitude;
+                var street = results[i].breweries[0].locations[0].streetAddress;
+                var city = results[i].breweries[0].locations[0].locality;
+                var state = results[i].breweries[0].locations[0].region;
+                var zip = results[i].breweries[0].locations[0].postalCode;
+                if (results[i].breweries[0].images && results[i].breweries[0].images.icon) {
+                    var image = results[i].breweries[0].images.icon;
+                    console.log(image);
+                } else {
+                    var image = "http://icons.iconarchive.com/icons/icons8/windows-8/256/Food-Beer-icon.png"
+                }
                 
 
 
@@ -44,6 +55,13 @@ $(document).ready(function() {
                 singleArr.push(beerName);
                 singleArr.push(latitude);
                 singleArr.push(longitude);
+                singleArr.push(street);
+                singleArr.push(city);
+                singleArr.push(state);
+                singleArr.push(zip);
+                singleArr.push(image);
+
+           
 
                 resultsArr.push(singleArr);
             }
@@ -59,16 +77,19 @@ $(document).ready(function() {
 
             for (var i = 0; i < resultsArr.length; i++) {
                 marker = new L.marker([resultsArr[i][2], resultsArr[i][3]])
-                    .bindPopup("<b>" + resultsArr[i][0] + "</b><br>" + resultsArr[i][1])
+                    .bindPopup("<img src="+resultsArr[i][8]+"><br><br>"+"<b>" + resultsArr[i][0] + "</b><br>" + resultsArr[i][1]+"<br>"+resultsArr[i][4]+"<br>"+
+                        resultsArr[i][5]+", "+resultsArr[i][6]+" "+resultsArr[i][7])
                     .addTo(map);
+            }
+        // used to make all the pages load. too slow for app.
+            if (numberOfPages >  pageNumber) {
+                makeRequest(++pageNumber);
             }
                
         });
+                 
     }
-
-    for(var i = 0; i<52;i++){
-        makeRequest(i);
-    }
+    makeRequest(0);
 
      // Locate user location // 
     map.locate({ setView: true, maxZoom: 8 });
