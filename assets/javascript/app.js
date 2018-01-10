@@ -2,9 +2,13 @@
         console.log("ready!");
     });
 
-    var beer = $(this).attr("data-name");
+    var beers = 'beers'
     var proxyURL = "https://desolate-tundra-96867.herokuapp.com/"
-    var queryURL = proxyURL + "http://api.brewerydb.com/v2/beers?styleId=30&withBreweries=Y&key=2e10788536db6bc8ca751b72291ba1dc";
+    var styleId = "styleId=30"
+
+    var breweryParam = 'withBreweries=Y'
+    var queryURL = proxyURL + "http://api.brewerydb.com/v2/"+beers+"?"+styleId+"&"+breweryParam+"&hasLabels=Y&key=2e10788536db6bc8ca751b72291ba1dc";
+
 
     $.ajax({
             url: queryURL,
@@ -14,6 +18,7 @@
         .done(function(response) {
             console.log(response);
             var results = response.data;
+            console.log(response.data);
 
             var resultsArr = [];
             for (var i = 0; i < results.length; i++) {
@@ -30,6 +35,10 @@
 
                 resultsArr.push(singleArr);
             }
+     //        for (var i = 0; i < results.length; i++) {
+     //        var pageNumber = results[i].currentPage;
+     //        console.log(results.length);
+     // };
 
             console.log(resultsArr)
             var map = L.map('map').setView([37.6872, -97.3301], 5);
