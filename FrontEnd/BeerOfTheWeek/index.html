@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Beerstyle of the Week</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Assets/style.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+   <script src="Control.OSMGeocoder.js"></script>
+    <link rel="stylesheet" href="Control.OSMGeocoder.css" />
+
+</head>
+
+<body>
+
+<div  id="content" class="content"> 
+    <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-8 button" >
+          </div>    
+
+          <div class="col-lg-3 button" >
+            <a href="file:///C:/Users/Jens/Desktop/CodingBootcamp/Project_1/project1/FrontEnd/index.html"><button type="button">BEER CLUB</button></a>
+          </div>
+
+          <div class="col-lg-1 button" >
+          </div>
+        </div>
+
+        <div class="row">
+    
+            <div class="col-lg-1">
+            </div>
+
+            <div class="col-lg-6 text">
+                <h1><strong>American IPA</strong></h1>
+                <p>The American India pale ale is a youngin’ in the world of beer styles. This simple reimagining is rooted in a style 200 years old, but its own history spans only 30 years.
+                  <br></p>
+                    <h3><strong>Appearance:</strong></h3>
+                    <p>An American IPA has much the appearance of a pale ale, with a color range from burnt gold to an orange tinted copper. It will be clear unless dry-hopped and unfiltered; something becoming more and more common as brewers try to pull every ounce of flavor they can out of their hops. Head will be white to off-white, retention can be variable (lots of hop oils will reduce head retention somewhat).</p>
+                
+                    <h3><strong>Aroma:</strong></h3>
+                    <p>Aroma will run the gambit of what American hops impart. Expect prominent, occasionally very intense citrus, floral, and fruity characters, sometimes bordering on perfume-like. Fruitiness from esters or hops is common, but it can also have a cleaner fermentation character.</p>
+
+                    <h3><strong>Taste:</strong></h3>
+                    <p>Medium-high to very high hop bitterness is likely, though the best of these beers will have enough of a malt backbone to provide some balance. Hop flavor will be the citrus, floral, fruity, piney and resinous qualities of American hops, with certain flavors shining more than others depending on hop selection. Malt will be a hidden low to medium presence with a little sweetness and possible caramel or toasty flavors bolstering. Bitterness will likely linger through the swallow and into the aftertaste but should not be harsh or unpleasant. Finish will be somewhat drying.
+                </p>
+
+
+                
+                <div class="col-lg-6">
+                </div>
+
+                <div class="col-lg-7 button beer-of-the-week">
+                  <button id="button" type="button">Where to find</button>
+                </div>  
+
+            </div> 
+
+             <div class="col-lg-3" class="map" id="map" style="width:50%; height:550px; margin-top: 130px; display: none;"></div>
+
+            <div class="col-lg-1">
+            </div>
+
+            <div class="col-lg-3 image">
+              <img src="Assets/IPA.jpg" style="height: 550px;">
+            </div>
+            
+            <div class="col-lg-1">
+            </div>
+              
+              
+            
+        </div>
+    </div>
+</div>  
+
+
+ <!-- <a class="button" class="hide-button" href="#""><img src="arrow.png" style="margin-top: 10px;"></a> -->   
+
+
+ <script type="text/javascript" src="Assets/map.js"></script>
+</body>
+</html>

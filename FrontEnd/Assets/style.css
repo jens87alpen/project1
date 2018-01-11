@@ -1,0 +1,69 @@
+body {
+	background-image: url(pics/back.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+.button button {
+	background-color: transparent;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 50px;
+}
+
+.button button:hover {
+	color: #FFCC00;
+}
+
+.first-line h1 {
+	color: white;
+	font-family: 'Bebas Neue';
+	font-size: 7em;
+	text-align: center;
+	letter-spacing: 2px;
+	
+}
+
+.first-line h3 {
+	color: white;
+	font-family: 'Bebas Neue';
+	font-size: 4em;
+	text-align: center;
+	letter-spacing: 3px;
+	
+}
+
+.beer-of-the-week button {
+	background-color: #FFCC00;
+	text-align: center;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 3em;
+	padding: 16px 31px;	
+	text-shadow: 1px 1px black;
+}
+
+.beer-of-the-week button:hover {
+	color: white;
+}
+
+.beer-of-the-week {
+	text-align: center;
+	position: relative;
+}
+
+.show img {
+	position: relative;
+	width: 110%;
+	margin-top: -357px;
+	margin-left: -200px;
+}
+

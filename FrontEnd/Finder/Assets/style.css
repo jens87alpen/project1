@@ -1,0 +1,68 @@
+body {
+	background-image: url(beertype.png);
+	background-size: cover;
+	overflow: auto;
+  	position: relative;
+}
+
+.intro h1 {
+	font-family: 'Bebas Neue';
+	color: white;
+	text-align: center;
+	font-size: 5em;
+	margin-top: 30px;
+}
+
+.submit button {
+	background-color: transparent;
+	border: 1px solid white;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 20px;
+	border-radius: 25px;
+	text-align: center;
+}
+
+.submit button:hover {
+	background-color: grey;
+}
+
+.button button {
+	background-color: transparent;
+	border: 1px solid white;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 50px;
+	float: right;
+	border-radius: 25px;
+}
+
+.text2 ul {
+	color: white;
+	top: 150px;
+	position: absolute;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+	line-height: 50px;
+	margin-top: 100px;
+	letter-spacing: 2px;
+}
+
+.text2 img {
+	margin-top: 620px;
+	width: 12%;
+	padding: 10px;
+}
