@@ -1,0 +1,431 @@
+body {
+	background-image: url(beertype.png);
+	background-size: cover;
+  	height: 100%;
+  	background-repeat: repeat;
+	
+}
+
+.button button {
+	background-color: transparent;
+	border: 1px solid white;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 50px;
+	float: right;
+	border-radius: 25px;
+}
+
+.button button:hover {
+	color: #FFCC00;
+}
+
+.background {
+	background-color: black;
+	color: white;
+	margin-top: 150px;
+	height: 650px;
+	width: 60%;
+	opacity: 0.85;
+	position: absolute;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	text-align: center;
+	border-radius: 25px;
+}
+
+.background h1 {
+	margin-top: 80px;
+	font-size: 3em
+}
+
+.submit button{
+	background-color: transparent;
+	border: 1px solid white;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 14px;
+	margin-top: 50px;
+	text-align: center;
+	border-radius: 25px;
+}
+
+.submit button:hover {
+	background-color: grey;
+}
+
+.submit {
+	text-align: center;
+}
+
+.background p {
+	line-height: 45px;
+	margin-top: 35px;
+}
+
+.question {
+	color: white;
+	font-size: 3em;
+	text-align: center;
+	margin-top: 30px;
+	font-family: 'Bebas Neue';
+	background-color: black;
+	opacity: 0.85;
+	position: relative;
+	padding: 55px;
+}
+
+.questionInput {
+	font-size: 2em;
+}
+
+.btnContainer h1 {
+	font-size: 2em;
+}
+
+.btnContainer button {
+	background-color: black;
+	margin: 10px;
+}
+
+.showAle {
+	background-color: black;
+	color: white;
+	margin-top: 50px;
+	height: 750px;
+	width: 100%;
+	opacity: 0.85;
+	position: absolute;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	text-align: center;
+	border-radius: 25px;
+}
+
+.showAle h1 {
+	font-size: 3em
+}
+
+.showStout {
+	background-color: black;
+	color: white;
+	margin-top: 50px;
+	height: 750px;
+	width: 100%;
+	opacity: 0.85;
+	position: absolute;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 1.5em;
+	text-align: center;
+	border-radius: 25px;
+}
+
+.showStout h1 {
+	font-size: 2em
+}
+
+.btn button {
+	background-color: transparent;
+	border: 1px solid white;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 14px;
+	margin-top: 50px;
+	text-align: center;
+	border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1366px) {
+	body {
+		background-image: url(beertype.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	.background {
+		background-color: black;
+		color: white;
+		margin-top: 80px;
+		height: 350px;
+		width: 75%;
+		opacity: 0.85;
+		position: absolute;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 20px;
+		text-align: center;
+		left: 180px;
+	}
+
+	.background p {
+		line-height: 25px;
+		margin-top: 30px;
+	}
+
+	.background h1 {
+		margin-top: 80px;
+		font-size: 2em
+	}
+
+	.submit button{
+		background-color: transparent;
+		border: 1px solid white;
+		color: white;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 1em;
+		padding: 10px 20px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.question {
+		color: white;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 60px;
+		font-family: 'Bebas Neue';
+		background-color: black;
+		opacity: 0.85;
+		position: absolute;
+		padding: 75px;
+	}
+
+	.btnContainer h1 {
+		font-size: 2em;
+	}
+
+	.btnContainer button {
+		background-color: black;
+		margin: 10px;
+	}
+}
+
+@media(max-width: 1280px) {
+	body {
+		background-image: url(beertype.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	.background {
+		background-color: black;
+		color: white;
+		margin-top: 80px;
+		height: 350px;
+		width: 75%;
+		opacity: 0.85;
+		position: absolute;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 18px;
+		text-align: center;
+		left: 130px;
+	}
+
+	.background p {
+		line-height: 25px;
+	}
+
+	.background h1 {
+		margin-top: 80px;
+		font-size: 2em
+	}
+
+	.submit button{
+		background-color: transparent;
+		border: 1px solid white;
+		color: white;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 1em;
+		padding: 10px 20px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.question {
+		color: white;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 60px;
+		font-family: 'Bebas Neue';
+		background-color: black;
+		opacity: 0.85;
+		position: absolute;
+		padding: 75px;
+	}
+
+	.btnContainer h1 {
+		font-size: 2em;
+	}
+
+	.btnContainer button {
+		background-color: black;
+		margin: 10px;
+	}
+}
+
+
+@media(max-width: 980px) {
+	body {
+		background-image: url(beertype.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	.background {
+		background-color: black;
+		color: white;
+		margin-top: 80px;
+		height: 350px;
+		width: 75%;
+		opacity: 0.85;
+		position: absolute;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.background p {
+		line-height: 25px;
+	}
+
+	.background h1 {
+		margin-top: 80px;
+		font-size: 2em
+	}
+
+	.submit button{
+		background-color: transparent;
+		border: 1px solid white;
+		color: white;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 1em;
+		padding: 10px 20px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.question {
+		color: white;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 60px;
+		font-family: 'Bebas Neue';
+		background-color: black;
+		opacity: 0.85;
+		position: absolute;
+		padding: 75px;
+	}
+
+	.btnContainer h1 {
+		font-size: 2em;
+	}
+
+	.btnContainer button {
+		background-color: black;
+		margin: 10px;
+	}
+}
+
+@media(max-width: 768px) {
+	body {
+		background-image: url(beertype768.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	.background {
+		background-color: black;
+		color: white;
+		margin-top: 30px;
+		height: 350px;
+		width: 70%;
+		opacity: 0.85;
+		position: absolute;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 16px;
+		text-align: center;
+		left: 100px;
+
+	}
+
+	.background p {
+		line-height: 25px;
+	}
+
+	.background h1 {
+		margin-top: 60px;
+		font-size: 2em
+	}
+
+	.submit button{
+		background-color: transparent;
+		border: 1px solid white;
+		color: white;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1px;
+		font-size: 1em;
+		padding: 10px 20px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.question {
+		color: white;
+		font-size: 19px;
+		text-align: center;
+		margin-top: 60px;
+		font-family: 'Bebas Neue';
+		background-color: black;
+		opacity: 0.85;
+		position: absolute;
+		padding: 45px;
+	}
+
+	.btnContainer h1 {
+		font-size: 2em;
+	}
+
+	.btnContainer button {
+		background-color: black;
+		margin: 10px;
+	}
+
+}

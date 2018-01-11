@@ -1,0 +1,126 @@
+body {
+	background-image: url(Assets/back.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+.button button {
+	background-color: transparent;
+	border: 1px solid white;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 50px;
+	border-radius: 25px;
+}
+
+
+#beerButton button {
+	background-color: transparent;
+	border: 1px solid white;
+	display: inline-block;
+	cursor:pointer;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 2em;
+	padding: 16px 31px;
+	text-decoration: none;
+	margin-top: 50px;
+	opacity: 0.85;
+}
+
+.button button:hover {
+	color: #FFCC00;
+}
+
+.first-line h1 {
+	color: white;
+	font-family: 'Bebas Neue';
+	font-size: 7em;
+	text-align: center;
+	letter-spacing: 2px;
+	
+}
+
+.first-line h3 {
+	color: white;
+	font-family: 'Bebas Neue';
+	font-size: 4em;
+	text-align: center;
+	letter-spacing: 3px;
+	
+}
+
+.beer-of-the-week button {
+	background-color: #FFCC00;
+	text-align: center;
+	color: white;
+	font-family: 'Bebas Neue';
+	letter-spacing: 2px;
+	font-size: 3em;
+	padding: 16px 31px;	
+	text-shadow: 2px 2px 2px black;
+}
+
+.beer-of-the-week button:hover {
+	color: white;
+}
+
+.beer-of-the-week {
+	text-align: center;
+	position: relative;
+}
+
+.show img {
+	position: relative;
+	width: 110%;
+	margin-top: -357px;
+	margin-left: -200px;
+}
+
+#mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9000;
+  background-color: #000;
+  display: none;
+}
+
+#boxes .window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 440px;
+  height: 200px;
+  display: none;
+  z-index: 9999;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#boxes #dialog {
+  width: 750px;
+  height: 300px;
+  padding: 10px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI Light', sans-serif;
+  font-size: 15pt;
+}
+
+#popupfoot {
+  font-size: 16pt;
+  position: absolute;
+  bottom: 0px;
+  width: 250px;
+  left: 250px;
+}
+
